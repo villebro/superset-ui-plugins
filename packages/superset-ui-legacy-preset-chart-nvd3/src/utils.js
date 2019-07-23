@@ -267,6 +267,14 @@ export function hideTooltips(shouldRemove) {
   }
 }
 
+export function removeTooltip(uuid) {
+  const classSelector = `.tooltip-${uuid}`;
+  const target = document.querySelector(classSelector);
+  if (target) {
+    target.remove();
+  }
+}
+
 export function wrapTooltip(chart, maxWidth) {
   const tooltipLayer =
     chart.useInteractiveGuideline && chart.useInteractiveGuideline()
